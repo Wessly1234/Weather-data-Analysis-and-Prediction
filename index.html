@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Weather Prediction System</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">
+        Weather Data Analysis & Prediction
+    </h1>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card info-card">
+                <h4>Maximum Temp</h4>
+                <h2 id="max"></h2>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card info-card">
+                <h4>Minimum Temp</h4>
+                <h2 id="min"></h2>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card info-card">
+                <h4>Average Temp</h4>
+                <h2 id="avg"></h2>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card info-card">
+                <h4>Total Days</h4>
+                <h2 id="days"></h2>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <canvas id="tempChart"></canvas>
+
+    <hr>
+
+    <div class="card p-4">
+
+        <h3>Future Temperature Prediction</h3>
+
+        <input type="number"
+               id="futureDay"
+               class="form-control"
+               placeholder="Enter Future Day Number">
+
+        <button class="btn btn-primary mt-3"
+                onclick="predictTemperature()">
+
+            Predict
+        </button>
+
+        <h3 class="mt-3" id="predictionResult"></h3>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
